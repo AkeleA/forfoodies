@@ -1,0 +1,232 @@
+.footer {
+  position: absolute;
+  width: 100%;
+  height: 393px;
+  /* Default / Black */
+  background: #0b0d17;
+}
+
+.recesses {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.foot1 {
+  position: absolute;
+  top: 64px;
+  left: 11.46vw;
+  right: 70.83vw;
+  bottom: 181px;
+
+  ul {
+    list-style-type: none;
+  }
+
+  h3 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    padding-bottom: 24px;
+    font-size: 18px;
+    line-height: 28px;
+    /* identical to box height, or 156% */
+    font-feature-settings: "salt" on, "liga" off;
+    /* Text / Gray 100 */
+    color: #f4f5f7;
+  }
+
+  li {
+    padding-bottom: 12px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+    font-feature-settings: "salt" on, "liga" off;
+    /* Text / Gray 200 */
+    color: #eeeff4;
+  }
+}
+
+.foot2 {
+  position: absolute;
+  top: 64px;
+  left: 31.25vw;
+  right: 51.04vw;
+  bottom: 217px;
+
+  ul {
+    list-style-type: none;
+
+    h3 {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 28px;
+      /* identical to box height, or 156% */
+      font-feature-settings: "salt" on, "liga" off;
+      /* Text / Gray 100 */
+      color: #f4f5f7;
+      padding-bottom: 24px;
+    }
+
+    li {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 24px;
+      /* identical to box height, or 171% */
+      font-feature-settings: "salt" on, "liga" off;
+      /* Text / Gray 200 */
+      color: #eeeff4;
+      padding-bottom: 12px;
+    }
+  }
+}
+
+.foot3 {
+  position: absolute;
+  top: 64px;
+  left: 51.04vw;
+  right: 31.25vw;
+  bottom: 145px;
+
+  ul {
+    list-style-type: none;
+
+    h3 {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 28px;
+      /* identical to box height, or 156% */
+      font-feature-settings: "salt" on, "liga" off;
+      /* Text / Gray 100 */
+      color: #f4f5f7;
+      padding-bottom: 24px;
+    }
+
+    li {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 24px;
+      /* identical to box height, or 171% */
+      font-feature-settings: "salt" on, "liga" off;
+      /* Text / Gray 200 */
+      color: #eeeff4;
+      padding-bottom: 12px;
+    }
+  }
+}
+
+.foot4 {
+  position: absolute;
+  top: 64px;
+  left: 70.83vw;
+  right: 17.92vw;
+  bottom: 166.04px;
+
+  ul {
+    list-style-type: none;
+
+    h3 {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 28px;
+      /* identical to box height, or 156% */
+      font-feature-settings: "salt" on, "liga" off;
+      /* Text / Gray 100 */
+      color: #f4f5f7;
+      padding-bottom: 32.4px;
+    }
+
+    li {
+      padding-bottom: 17.04px;
+    }
+  }
+}
+
+hr {
+  position: absolute;
+  left: 0;
+  top: 312px;
+  bottom: 80px;
+  right: 0;
+  opacity: 0.1;
+  color: #ffffff;
+}
+
+.footer-bottom {
+  position: absolute;
+  left: 12.5vw;
+  right: 50vw;
+  top: 341px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  /* identical to box height, or 171% */
+  font-feature-settings: "salt" on, "liga" off;
+  /* Text / Gray 300 */
+  color: #d9dbe1;
+}
+
+.internet > div {
+  width: 32px;
+  height: 32px;
+  background-color: rgb(46, 43, 43);
+  border-radius: 100%;
+  padding: 2px;
+}
+
+.i-insta {
+  position: absolute;
+  left: 77.5vw;
+  top: 345px;
+  right: 20.28vw;
+  bottom: 24px;
+}
+
+.insta {
+  position: absolute;
+  left: 30%;
+  top: 27%;
+}
+
+.i-youtube {
+  position: absolute;
+  left: 81.39vw;
+  top: 345px;
+  right: 16.39vw;
+  bottom: 24px;
+}
+
+.youtube {
+  position: absolute;
+  left: 27%;
+  top: 27%;
+}
+
+.i-tweet {
+  position: absolute;
+  left: 85.28vw;
+  top: 345px;
+  right: 12.5vw;
+  bottom: 24px;
+}
+
+.tweet {
+  position: absolute;
+  left: 27%;
+  top: 27%;
+}
