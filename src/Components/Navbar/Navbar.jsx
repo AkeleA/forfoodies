@@ -16,8 +16,12 @@ const Navbar = () => {
         <div className="n-right">
           <ul>
             <li>Home</li>
-            <li>Login</li>
-            <button className="signButton">Sign Up</button>
+            <Link to="/login" id="login">
+              <li>Login</li>
+            </Link>
+            <Link to="/register" id="register">
+              <button className="signButton">Sign Up</button>
+            </Link>
           </ul>
         </div>
       </nav>

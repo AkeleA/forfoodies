@@ -1,0 +1,124 @@
+.L-left {
+  width: 53.056%;
+  ///height: 900px;
+}
+
+.logImage {
+  width: 100%;
+
+  /// figma file stated border radius but I see no need
+  ///border-radius: 7px;
+}
+
+.log-right {
+  position: absolute;
+  left: 58.68vw;
+  right: 7.43vw;
+  top: 30.89vh;
+  bottom: 18.11vh;
+}
+
+.log-right > h2 {
+  width: 214px;
+  height: 33px;
+  padding-left: 9.51vw;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 27px;
+  line-height: 33px;
+  /* identical to box height, or 122% */
+  color: #00302e;
+}
+
+.mail-input {
+  width: 488px;
+  height: 71px;
+  padding-left: 0;
+  margin-top: 61px;
+  background: rgba(255, 255, 255, 0.83);
+  border: 1px solid rgba(251, 221, 187, 0.51);
+  border-radius: 5px;
+}
+
+.mail-input::placeholder {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 33px;
+  /* identical to box height, or 236% */
+  padding-left: 25px;
+  color: rgba(0, 48, 46, 0.53);
+}
+
+.pass-div .sec-input {
+  width: 488px;
+  height: 71px;
+  padding-left: 0;
+  margin-top: 48px;
+  background: rgba(255, 255, 255, 0.83);
+  border: 1px solid rgba(251, 221, 187, 0.51);
+  border-radius: 5px;
+}
+
+.sec-input::placeholder {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 33px;
+  /* identical to box height, or 236% */
+  padding-left: 25px;
+  color: rgba(0, 48, 46, 0.53);
+}
+
+.show-button {
+  position: absolute;
+  width: 37px;
+  height: 33px;
+  margin-left: 95.27%;
+  margin-top: -12%;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 33px;
+  /* identical to box height, or 236% */
+  text-align: center;
+  color: #00302e;
+}
+
+div.signup {
+  margin-top: 3.78vh;
+  width: 488px;
+}
+
+.create {
+  width: 133px;
+  height: 33px;
+  text-decoration: none;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 33px;
+  /* identical to box height, or 236% */
+  text-align: center;
+  color: rgba(0, 48, 46, 0.91);
+}
+
+.mnemosyne {
+  text-decoration: none;
+  margin-left: 229px;
+  width: 125px;
+  height: 33px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 33px;
+  /* identical to box height, or 236% */
+  text-align: center;
+  color: rgba(0, 48, 46, 0.91);
+}

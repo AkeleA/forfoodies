@@ -41,9 +41,12 @@ nav {
     li:first-child {
       color: $altcolor;
     }
-    .login {
-      color: white;
+    #login {
       text-decoration: none;
+    }
+
+    #login > li {
+      color: white;
     }
 
     .signButton {
