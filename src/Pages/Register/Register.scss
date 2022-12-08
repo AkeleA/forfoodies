@@ -1,0 +1,110 @@
+.r-left {
+  width: 53.056%;
+  ///height: 900px;
+}
+
+.reg-img {
+  width: 100%;
+  /// figma file stated border radius but I see no need
+  ///border-radius: 7px;
+}
+
+.r-right {
+  position: absolute;
+  left: 58.89vw;
+  right: 12.92vw;
+  top: 22.67vh;
+  bottom: 15.89vh;
+}
+
+.r-right > h2 {
+  width: 247px;
+  height: 33px;
+  padding-left: 137px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 27px;
+  line-height: 33px;
+  /* identical to box height, or 122% */
+  color: #00302e;
+}
+
+.r-name {
+  width: 488px;
+  height: 71px;
+  padding-left: 0;
+  margin-top: 61px;
+  background: rgba(255, 255, 255, 0.83);
+  border: 1px solid rgba(251, 221, 187, 0.51);
+  border-radius: 5px;
+}
+
+.r-name::placeholder {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 33px;
+  /* identical to box height, or 236% */
+  padding-left: 25px;
+  color: rgba(0, 48, 46, 0.53);
+}
+
+.r-mail {
+  width: 488px;
+  height: 71px;
+  padding-left: 0;
+  margin-top: 47px;
+  background: rgba(255, 255, 255, 0.83);
+  border: 1px solid rgba(251, 221, 187, 0.51);
+  border-radius: 5px;
+}
+
+.r-mail::placeholder {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 33px;
+  /* identical to box height, or 236% */
+  padding-left: 25px;
+  color: rgba(0, 48, 46, 0.53);
+}
+
+.r-sec .r-password {
+  width: 488px;
+  height: 71px;
+  padding-left: 0;
+  margin-top: 28px;
+  background: rgba(255, 255, 255, 0.83);
+  border: 1px solid rgba(251, 221, 187, 0.51);
+  border-radius: 5px;
+}
+
+.r-password::placeholder {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 33px;
+  /* identical to box height, or 236% */
+  padding-left: 25px;
+  color: rgba(0, 48, 46, 0.53);
+}
+
+.show-button {
+  position: absolute;
+  width: 37px;
+  height: 33px;
+  padding-left: 23%;
+  margin-top: -14%;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 33px;
+  /* identical to box height, or 236% */
+  text-align: center;
+  color: #00302e;
+}
