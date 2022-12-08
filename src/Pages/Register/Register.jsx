@@ -53,12 +53,13 @@ const Register = () => {
             </span>
           </div>{" "}
           <br />
-          {/**  <Button 
-          className={formvalid?"SignUp-active":"SignUp-submit"}
-          type='submit'
-          id='btn'
-          disabled={!formvalid}
-          props={"SIGN UP"} />**/}
+          <Button
+            className={formcheck ? "SignUp-active" : "SignUp-submit"}
+            type="submit"
+            id="btn"
+            disabled={!formcheck}
+            props={"SIGN UP"}
+          />
         </form>
       </div>
     </div>
