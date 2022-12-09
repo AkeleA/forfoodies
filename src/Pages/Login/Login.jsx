@@ -68,7 +68,11 @@ const Login = () => {
               id="password"
               required
             />
-            <span className="show-button" onClick={togglePassword}>
+            <span
+              className="togbutton"
+              id="showtogbutton"
+              onClick={togglePassword}
+            >
               show
             </span>
           </div>{" "}
