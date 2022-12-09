@@ -44,7 +44,7 @@ const Login = () => {
   };
 
   return (
-    <div classname="login">
+    <div className="login">
       <div className="L-left">
         <img src={imago} alt="" className="logImage" />
       </div>

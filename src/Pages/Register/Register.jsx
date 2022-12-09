@@ -12,7 +12,6 @@ const Register = () => {
   const togglePassword = (e) => {
     //to prevent default action
     e.preventDefault();
-
     setshowPassword(!showPassword);
   };
   ///Form controlling
