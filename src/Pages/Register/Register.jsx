@@ -7,11 +7,14 @@ import imago from "../../Assets/images/signupPicture.svg";
 const Register = () => {
   //toggle password
   const [showPassword, setshowPassword] = useState(false);
+
+  /// the toggle password i.e show and hide
   const togglePassword = (e) => {
+    //to prevent default action
     e.preventDefault();
+
     setshowPassword(!showPassword);
   };
-
   ///Form controlling
   const [formcheck, setformcheck] = useState(false);
   const [form, setForm] = useState({
@@ -70,19 +73,20 @@ const Register = () => {
           <div className="r-sec">
             <input
               className="r-password"
+              type={showPassword ? "text" : "password"}
               name="password"
               placeholder="Your Password"
               id="password"
               required
               onChange={handleChange}
             />
-            <span
+            <button
               className="show-button"
               id="regshowbuuutt"
               onClick={togglePassword}
             >
               show
-            </span>
+            </button>
           </div>{" "}
           <br />
           <Button

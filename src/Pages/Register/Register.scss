@@ -95,9 +95,12 @@
 
 #regshowbuuutt {
   position: absolute;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
   width: 37px;
   height: 33px;
-  padding-left: 120%;
+  margin-left: 120%;
   bottom: 5px;
   font-family: "Poppins";
   font-style: normal;

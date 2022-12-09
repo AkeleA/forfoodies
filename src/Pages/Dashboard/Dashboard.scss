@@ -1,0 +1,145 @@
+.Dashboard {
+  display: flex;
+}
+
+.sidebar {
+  width: 320px;
+  height: 100vh;
+  background: #fbfbfb;
+  border-radius: 20px;
+}
+
+.sidebar .s-logo > img {
+  margin-top: 12.5vh;
+  margin-left: 4.1vw;
+}
+
+.s-list1 {
+  position: absolute;
+  width: 267px;
+  height: 50px;
+  top: 296px;
+  left: 26px;
+  background: #efefef;
+  border-radius: 12px;
+
+  span > .icon1 {
+    position: absolute;
+    width: 21.02px;
+    height: 18.68px;
+    left: 16.48px;
+    right: 229.5px;
+    top: 15.32px;
+    bottom: 16px;
+    color: #000000;
+  }
+
+  .list-dash {
+    position: absolute;
+    width: 106px;
+    height: 15px;
+    left: 54px;
+    top: -2.5px;
+    right: 107px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+  }
+}
+
+.s-list2 > span > .icon2 {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 43px;
+  right: 257px;
+  top: 376px;
+  color: #bcbcbc;
+}
+
+span > .list-prof {
+  position: absolute;
+  width: 116px;
+  height: 15px;
+  left: 80px;
+  top: 360px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #707070;
+}
+
+.s-list3 > span > .icon3 {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 44px;
+  right: 258px;
+  top: 441px;
+  color: #bcbcbc;
+}
+
+span > .list-orders {
+  position: absolute;
+  width: 116px;
+  height: 15px;
+  left: 80px;
+  top: 425px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #707070;
+}
+.order-button {
+  box-sizing: border-box;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 251px;
+  top: 438px;
+  background: #06e775;
+  border: 1px solid #06e775;
+  border-radius: 5px;
+}
+
+.s-list4 > span > .icon4 {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 47px;
+  right: 258px;
+  top: 500px;
+  color: #bcbcbc;
+}
+
+span > .list-cart {
+  position: absolute;
+  width: 116px;
+  height: 15px;
+  left: 80px;
+  top: 482.5px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #707070;
+}
+.cart-button {
+  box-sizing: border-box;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 251px;
+  top: 495.5px;
+  background: #f3c294;
+  border: 1px solid #f3c294;
+  border-radius: 5px;
+}
