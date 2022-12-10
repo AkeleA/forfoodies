@@ -142,7 +142,9 @@ const Dashboard = () => {
                   <h2>{menu2.name}</h2>
                   <p>{menu2.content}</p>
                   <div className="price2">{menu2.price}</div>
-                  <button className="addcart2">{menu2.function}</button>
+                  <button className="addcart2" onClick={increase}>
+                    {menu2.function}
+                  </button>
                 </div>
               ))}
           </div>
