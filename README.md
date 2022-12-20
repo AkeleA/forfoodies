@@ -1,6 +1,6 @@
 # Made for foodies
 
-This is a project developed to help people within Ilorin order food at their comfort. The live demo of this project can be found
+This is a project developed to help people within Ilorin order food at their comfort. The live demo of this project can be found [here](https://lilies-place.netlify.app/)
 
 ## Table of Contents
 
