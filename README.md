@@ -46,4 +46,4 @@ This project was put forward as a challenge by @kenogit78
 
 ## Contact
 
-Contact me @achorisaac@gmail.com
+Contact me by mail achorisaac@gmail.com
