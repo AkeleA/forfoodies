@@ -4,12 +4,12 @@ import { MdHome } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { BsCalendarFill, BsFillBookmarkFill } from "react-icons/bs";
 import avi from "../../Assets/images/avatar.svg";
-import pasta from "../../Assets/images/pasta.svg";
-import burger from "../../Assets/images/burger.svg";
-import balls from "../../Assets/images/balls.svg";
-import spagg from "../../Assets/images/spagg.svg";
-import bread from "../../Assets/images/bread.svg";
-import china from "../../Assets/images/china.svg";
+import pasta from "../../Assets/images/dashimg1.png";
+import burger from "../../Assets/images/dashimg2.png";
+import balls from "../../Assets/images/dashimg3.png";
+import spagg from "../../Assets/images/dashimg4.png";
+import bread from "../../Assets/images/dashimg5.png";
+import china from "../../Assets/images/dashimg5.png";
 
 import sideLogo from "../../Assets/images/dashlogo.png";
 

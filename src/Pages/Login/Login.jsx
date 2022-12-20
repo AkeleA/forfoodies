@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./Login.scss";
 import { Link } from "react-router-dom";
-import imago from "../../Assets/images/loginPicture.svg";
+import imago from "../../Assets/images/logimage.png";
+import imagoshade from "../../Assets/images/logcolor.png";
 import Button from "../../Components/Button/Button";
 
 const Login = () => {
@@ -47,6 +48,7 @@ const Login = () => {
     <div className="login">
       <div className="L-left">
         <img src={imago} alt="" className="logImage" />
+        <img src={imagoshade} alt="" className="logshade" />
       </div>
       <div className="log-right">
         <h2>Welcome Back!</h2>

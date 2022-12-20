@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./Register.scss";
 import { Link } from "react-router-dom";
 import Button from "../../Components/Button/Button";
-import imago from "../../Assets/images/signupPicture.svg";
+import imago from "../../Assets/images/regimage.png";
+import imagocov from "../../Assets/images/regcolor.png";
 
 const Register = () => {
   //toggle password
@@ -51,6 +52,7 @@ const Register = () => {
     <div className="register">
       <div className="r-left">
         <img src={imago} alt="" className="reg-img" />
+        <img src={imagocov} alt="" className="regcov" />
       </div>
       <div className="r-right">
         <h2>Welcome to Lilies!</h2>

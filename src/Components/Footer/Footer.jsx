@@ -46,7 +46,7 @@ const Footer = () => {
       </div>
       <hr />
       <div className="footer-bottom">
-        <p>&#169; 2021 AKELE, All rights reserved</p>
+        <p>&#169; 2022 AKELE, All rights reserved</p>
       </div>
       <div className="internet">
         <div className="i-insta">

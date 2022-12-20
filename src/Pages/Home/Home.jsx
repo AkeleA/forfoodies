@@ -2,11 +2,10 @@ import React from "react";
 import Navbar from "../../Components/Navbar/Navbar";
 import android from "../../Assets/images/playStore.svg";
 import apple from "../../Assets/images/appleStore.svg";
-import chopsticks from "../../Assets/images/food.svg";
-import spag from "../../Assets/images/pasta.svg";
-import mballs from "../../Assets/images/balls.svg";
-import boja from "../../Assets/images/burger.svg";
-
+import chopsticks from "../../Assets/images/coverimg.png";
+import spag from "../../Assets/images/homepage1.png";
+import mballs from "../../Assets/images/homepage2.png";
+import boja from "../../Assets/images/homepage3.png";
 import "./Home.scss";
 import Footer from "../../Components/Footer/Footer";
 
