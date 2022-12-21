@@ -24,7 +24,7 @@ This project aims to ease the issues around ordering food in ilorin, Nigeria. I 
 
 ## Technologies Used
 
-This project was built with ReactJs(_making extensive use of useState and useReact hooks_) & SCSS.
+This project was built with ReactJs & SCSS.
 
 ## Setup
 
