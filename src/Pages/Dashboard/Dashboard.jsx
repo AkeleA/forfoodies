@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Dashboard.scss";
 import { MdHome } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
@@ -15,13 +15,6 @@ import sideLogo from "../../Assets/images/dashlogo.png";
 
 const Dashboard = () => {
   let userDetails = JSON.parse(localStorage.getItem("user"));
-  const [counter, setCounter] = useState(0);
-  const increase = () => {
-    setCounter(counter + 1);
-  };
-  const decrease = () => {
-    setCounter(counter - 1);
-  };
   //putting the images, titles and prices in arrays so i can map throught them
   const dashmenu1 = [
     {
@@ -99,7 +92,7 @@ const Dashboard = () => {
             <span>
               <BsCalendarFill className="icon3" />
               <p className="list-orders">Orders</p>
-              <button className="order-button">{counter}</button>
+              <button className="order-button">6</button>
             </span>
           </div>
           <div className="s-list4">
@@ -128,9 +121,7 @@ const Dashboard = () => {
                   <h2>{menu1.name}</h2>
                   <p>{menu1.content}</p>
                   <div className="price">{menu1.price}</div>
-                  <button className="addcart" onClick={increase}>
-                    {menu1.function}
-                  </button>
+                  <button className="addcart">{menu1.function}</button>
                 </div>
               ))}
           </div>
@@ -142,9 +133,7 @@ const Dashboard = () => {
                   <h2>{menu2.name}</h2>
                   <p>{menu2.content}</p>
                   <div className="price2">{menu2.price}</div>
-                  <button className="addcart2" onClick={increase}>
-                    {menu2.function}
-                  </button>
+                  <button className="addcart2">{menu2.function}</button>
                 </div>
               ))}
           </div>
