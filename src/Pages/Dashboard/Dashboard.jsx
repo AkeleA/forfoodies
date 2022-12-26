@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Dashboard.scss";
 import { MdHome } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
@@ -10,12 +10,14 @@ import balls from "../../Assets/images/dashimg3.png";
 import spagg from "../../Assets/images/dashimg4.png";
 import bread from "../../Assets/images/dashimg5.png";
 import china from "../../Assets/images/dashimg5.png";
-
 import sideLogo from "../../Assets/images/dashlogo.png";
+import OrderModal from "../../Components/Modal/CartModal/Modal";
 
-const Dashboard = () => {
+const Dashboard = ({ menu1, menu2 }) => {
   let userDetails = JSON.parse(localStorage.getItem("user"));
   //putting the images, titles and prices in arrays so i can map throught them
+  const [Modal, setModal] = useState(false);
+  const CloseModal = () => setModal(false);
   const dashmenu1 = [
     {
       id: 1,
@@ -71,6 +73,7 @@ const Dashboard = () => {
 
   return (
     <div className="Dashboard">
+      {Modal ? <div onClick={CloseModal} className="fade"></div> : null}
       <div className="sidebar">
         <div className="s-logo">
           <img src={sideLogo} alt="logo" />
@@ -121,7 +124,9 @@ const Dashboard = () => {
                   <h2>{menu1.name}</h2>
                   <p>{menu1.content}</p>
                   <div className="price">{menu1.price}</div>
-                  <button className="addcart">{menu1.function}</button>
+                  <button className="addcart" onClick={() => setModal(true)}>
+                    {menu1.function}
+                  </button>
                 </div>
               ))}
           </div>
@@ -133,10 +138,15 @@ const Dashboard = () => {
                   <h2>{menu2.name}</h2>
                   <p>{menu2.content}</p>
                   <div className="price2">{menu2.price}</div>
-                  <button className="addcart2">{menu2.function}</button>
+                  <button className="addcart2" onClick={() => setModal(true)}>
+                    {menu2.function}
+                  </button>
                 </div>
               ))}
           </div>
+        </div>
+        <div>
+          <OrderModal show={Modal} close={CloseModal} className="ordermodal" />
         </div>
       </div>
     </div>
