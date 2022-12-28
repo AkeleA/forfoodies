@@ -13,11 +13,16 @@ import china from "../../Assets/images/dashimg5.png";
 import sideLogo from "../../Assets/images/dashlogo.png";
 import OrderModal from "../../Components/Modal/CartModal/Modal";
 
-const Dashboard = ({ menu1, menu2 }) => {
+const Dashboard = () => {
   let userDetails = JSON.parse(localStorage.getItem("user"));
   //putting the images, titles and prices in arrays so i can map throught them
-  const [Modal, setModal] = useState(false);
-  const CloseModal = () => setModal(false);
+  const [selectedMenu, setSelectedMenu] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const closeModal = () => {
+    setModalOpen(false);
+    setSelectedMenu(null);
+  };
+
   const dashmenu1 = [
     {
       id: 1,
@@ -73,7 +78,8 @@ const Dashboard = ({ menu1, menu2 }) => {
 
   return (
     <div className="Dashboard">
-      {Modal ? <div onClick={CloseModal} className="fade"></div> : null}
+      {modalOpen ? <div onClick={closeModal} className="fade"></div> : null}
+      <OrderModal show={modalOpen} close={closeModal} menu={selectedMenu} />
       <div className="sidebar">
         <div className="s-logo">
           <img src={sideLogo} alt="logo" />
@@ -118,35 +124,44 @@ const Dashboard = ({ menu1, menu2 }) => {
           </div>
           <div className="menutop">
             {dashmenu1 &&
-              dashmenu1.map((menu1) => (
-                <div className="container" key={menu1.id}>
-                  <img src={menu1.image} className="tf-image" alt="" />
-                  <h2>{menu1.name}</h2>
-                  <p>{menu1.content}</p>
-                  <div className="price">{menu1.price}</div>
-                  <button className="addcart" onClick={() => setModal(true)}>
-                    {menu1.function}
+              dashmenu1.map((menu) => (
+                <div className="container" key={menu.id}>
+                  <img src={menu.image} className="tf-image" alt="" />
+                  <h2>{menu.name}</h2>
+                  <p>{menu.content}</p>
+                  <div className="price">{menu.price}</div>
+                  <button
+                    className="addcart"
+                    onClick={() => {
+                      setModalOpen(true);
+                      setSelectedMenu(menu);
+                    }}
+                  >
+                    {menu.function}
                   </button>
                 </div>
               ))}
           </div>
           <div className="menubottom">
             {dashmenu2 &&
-              dashmenu2.map((menu2) => (
-                <div className="container2" key={menu2.id}>
-                  <img src={menu2.image} className="tb-image" alt="" />
-                  <h2>{menu2.name}</h2>
-                  <p>{menu2.content}</p>
-                  <div className="price2">{menu2.price}</div>
-                  <button className="addcart2" onClick={() => setModal(true)}>
-                    {menu2.function}
+              dashmenu2.map((menu) => (
+                <div className="container2" key={menu.id}>
+                  <img src={menu.image} className="tb-image" alt="" />
+                  <h2>{menu.name}</h2>
+                  <p>{menu.content}</p>
+                  <div className="price2">{menu.price}</div>
+                  <button
+                    className="addcart2"
+                    onClick={() => {
+                      setModalOpen(true);
+                      setSelectedMenu(menu);
+                    }}
+                  >
+                    {menu.function}
                   </button>
                 </div>
               ))}
           </div>
-        </div>
-        <div>
-          <OrderModal show={Modal} close={CloseModal} className="ordermodal" />
         </div>
       </div>
     </div>
