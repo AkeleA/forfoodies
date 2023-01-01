@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import "./Dashboard.scss";
 import { MdHome } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
@@ -12,15 +13,38 @@ import bread from "../../Assets/images/dashimg5.png";
 import china from "../../Assets/images/dashimg5.png";
 import sideLogo from "../../Assets/images/dashlogo.png";
 import OrderModal from "../../Components/Modal/CartModal/Modal";
+import YourCart from "../../Components/Modal/OrderModal/Cart";
 
 const Dashboard = () => {
   let userDetails = JSON.parse(localStorage.getItem("user"));
   //putting the images, titles and prices in arrays so i can map throught them
   const [selectedMenu, setSelectedMenu] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
+  const [checkoutModalOpen, setCheckoutModalOpen] = useState(false);
+  const [cart, setCart] = useState([]);
+
   const closeModal = () => {
     setModalOpen(false);
     setSelectedMenu(null);
+  };
+
+  const openCheckOutModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeCheckoutModal = () => {
+    setCheckoutModalOpen(false);
+  };
+
+  const addToCart = (item) => {
+    item.key = uuidv4();
+    setCart([...cart, item]);
+  };
+
+  const removeFromCart = (index) => {
+    const newCart = [...cart];
+    newCart.splice(index, 1);
+    setCart(newCart);
   };
 
   const dashmenu1 = [
@@ -79,7 +103,21 @@ const Dashboard = () => {
   return (
     <div className="Dashboard">
       {modalOpen ? <div onClick={closeModal} className="fade"></div> : null}
-      <OrderModal show={modalOpen} close={closeModal} menu={selectedMenu} />
+      <OrderModal
+        show={modalOpen}
+        close={closeModal}
+        menu={selectedMenu}
+        addToCart={addToCart}
+        openCheckOutModal={openCheckOutModal}
+      />
+      {modalOpen && (
+        <YourCart
+          show={checkoutModalOpen}
+          close={closeModal}
+          cart={cart}
+          removeFromCart={removeFromCart}
+        />
+      )}
       <div className="sidebar">
         <div className="s-logo">
           <img src={sideLogo} alt="logo" />
@@ -108,7 +146,9 @@ const Dashboard = () => {
             <span>
               <BsFillBookmarkFill className="icon4" />
               <p className="list-cart">Your Cart</p>
-              <button className="cart-button">6</button>
+              <button className="cart-button" onClick={openCheckOutModal}>
+                6
+              </button>
             </span>
           </div>
         </div>
