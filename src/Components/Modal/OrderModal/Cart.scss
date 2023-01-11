@@ -1,9 +1,173 @@
 div.YoCart {
   position: absolute;
   z-index: 3;
-  width: 521px;
+  width: 760px;
   height: 150vh;
   right: 0px;
   top: 0px;
   background-color: #ffffff;
+}
+
+h3.title {
+  position: absolute;
+  width: 82px;
+  height: 33px;
+  left: 62px;
+  right: 616px;
+  top: 5.78vh;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 33px;
+  /* identical to box height, or 194% */
+  color: #00302e;
+}
+
+h4.item {
+  position: absolute;
+  width: 50px;
+  height: 21px;
+  left: 69px;
+  top: 109px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 33px;
+  /* or 254% */
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.69);
+}
+
+h4.quantity {
+  position: absolute;
+  width: 23px;
+  height: 33px;
+  left: 426px;
+  top: 109px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 33px;
+  /* identical to box height, or 254% */
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.69);
+}
+
+h4.uprice {
+  position: absolute;
+  width: 62px;
+  height: 33px;
+  left: 493px;
+  top: 109px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 33px;
+  /* identical to box height, or 254% */
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.69);
+}
+
+h4.total {
+  position: absolute;
+  width: 63px;
+  height: 33px;
+  left: 608px;
+  top: 109px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 33px;
+  /* identical to box height, or 254% */
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.69);
+}
+
+div.cat-contents {
+  left: 63px;
+  top: 166px;
+  margin-left: 62px;
+  margin-top: 166px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+
+  li.cart-item {
+    display: flex;
+    flex-direction: row;
+  }
+
+  li > img {
+    width: 70px;
+    height: 70px;
+  }
+
+  li > .cartName {
+    width: 113px;
+    height: 33px;
+    margin-top: 10px;
+    padding-left: 15px;
+    font-weight: 600;
+    font-family: "Poppins";
+    font-style: normal;
+    font-size: 17px;
+    line-height: 33px;
+    color: #00302e;
+  }
+
+  li > .removebutton {
+    cursor: pointer;
+    width: 50px;
+    height: 21px;
+    padding-top: 30px;
+    margin-left: -110px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 33px;
+    /* or 275% */
+    display: flex;
+    align-items: center;
+    color: #c92c33;
+  }
+
+  li > .cartQty {
+    width: 11px;
+    height: 33px;
+    margin-left: 239px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 33px;
+    /* identical to box height, or 194% */
+    color: #00302e;
+  }
+
+  li > .cartuPrice {
+    width: 88px;
+    height: 33px;
+    margin-left: 33px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 33px;
+    /* identical to box height, or 194% */
+    color: #00302e;
+  }
+
+  .cart-item {
+    margin-bottom: 50px;
+  }
 }

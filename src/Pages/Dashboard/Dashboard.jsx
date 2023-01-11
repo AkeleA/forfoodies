@@ -33,15 +33,12 @@ const Dashboard = () => {
   const closeModal = () => {
     setModalOpen(false);
     setSelectedMenu(null);
+    setYourCartModalOpen(false);
   };
 
   const openCheckOutModal = () => {
     setModalOpen(true);
     setYourCartModalOpen(true);
-  };
-
-  const closeYourCartModal = () => {
-    setYourCartModalOpen(false);
   };
 
   const closeCheckoutModal = () => {
@@ -70,7 +67,7 @@ const Dashboard = () => {
       name: "Stir Fry Pasta",
       image: pasta,
       content: "The in-house pasta and chicken by chef Moose",
-      price: "N 1,000.00",
+      price: "N1,000.00",
       function: "Add to cart",
     },
     {
@@ -78,7 +75,7 @@ const Dashboard = () => {
       name: "Stir Fry Pasta",
       image: burger,
       content: "The in-house pasta and chicken by chef Moose",
-      price: "N 1,000.00",
+      price: "N1,000.00",
       function: "Add to cart",
     },
     {
@@ -86,7 +83,7 @@ const Dashboard = () => {
       name: "Stir Fry Pasta",
       image: balls,
       content: "The in-house pasta and chicken by chef Moose",
-      price: "N 1,000.00",
+      price: "N1,000.00",
       function: "Add to cart",
     },
   ];
@@ -96,7 +93,7 @@ const Dashboard = () => {
       name: "Stir Fry Pasta",
       image: spagg,
       content: "The in-house pasta and chicken by chef Moose",
-      price: "N 1,000.00",
+      price: "N1,000.00",
       function: "Add to cart",
     },
     {
@@ -104,7 +101,7 @@ const Dashboard = () => {
       name: "Stir Fry Pasta",
       image: bread,
       content: "The in-house pasta and chicken by chef Moose",
-      price: "N 1,000.00",
+      price: "N1,000.00",
       function: "Add to cart",
     },
     {
@@ -112,7 +109,7 @@ const Dashboard = () => {
       name: "Stir Fry Pasta",
       image: china,
       content: "The in-house pasta and chicken by chef Moose",
-      price: "N 1,000.00",
+      price: "N1,000.00",
       function: "Add to cart",
     },
   ];
@@ -120,7 +117,7 @@ const Dashboard = () => {
   return (
     <div className="Dashboard">
       {modalOpen ? <div onClick={closeModal} className="fade"></div> : null}
-      <ModalBackdrop show={yourCartModalOpen} onClick={closeYourCartModal} />
+      <ModalBackdrop show={yourCartModalOpen} onClick={closeModal} />
       <OrderModal
         show={modalOpen}
         closeModal={closeModal}
@@ -134,7 +131,7 @@ const Dashboard = () => {
         show={yourCartModalOpen}
         /**why am I passing chechoutModal open twice?
          * Also can I remove the useEffect while keeping the modalopen like I did for the OrderModal **/
-        close={closeYourCartModal}
+        closeModal={closeModal}
         checkoutModalOpen={checkoutModalOpen}
         cart={cart}
         removeFromCart={removeFromCart}

@@ -27,11 +27,17 @@ const YourCart = (props) => {
   let totalPrice = 0;
   if (cart) {
     cart.forEach((item) => {
-      if (typeof item.price === "number" && typeof item.quantity === "number") {
-        totalPrice += item.price * item.quantity;
+      let price = parseFloat(item.price.replace(/[^\d\.]/g, ""));
+      if (typeof price === "number" && typeof item.quantity === "number") {
+        totalPrice += price * item.quantity;
       }
     });
   }
+
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "NGN",
+  });
 
   return (
     <div
@@ -50,17 +56,20 @@ const YourCart = (props) => {
       <h4 className="total">Sub-total</h4>
 
       <div className="cat-contents">
-        {cart.map((item) => {
+        {cart.map((item, index) => {
           return (
-            <li key={item.key}>
-              <img src={item.image} alt={item.name} />
-              <p>{item.name}</p>
-              <p>{item.quantity}</p>
-              <p>${item.price}</p>
+            <li key={item.key} className="cart-item">
+              <img src={item.image} alt={item.name} className="cartImg" />
+              <p className="cartName">{item.name}</p>
+              <p className="removebutton" onClick={() => removeFromCart(index)}>
+                Remove
+              </p>
+              <p className="cartQty">{item.quantity}</p>
+              <p className="cartuPrice">{item.price}</p>
             </li>
           );
         })}
-        <p>Total: {totalPrice}</p>
+        <p className="carttPrice">{formatter.format(totalPrice)}</p>
       </div>
     </div>
   );
