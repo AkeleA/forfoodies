@@ -2,28 +2,25 @@ import React, { useEffect, useRef } from "react";
 import "./Cart.scss";
 
 const YourCart = (props) => {
-  const { close, cart, show, removeFromCart } = props;
+  const { show, close, cart, removeFromCart } = props;
   const modalRef = useRef(null);
 
-  console.log(props);
-  /*if (!cart) {
-    return null; // don't render the component if cart is not defined. This didn't fix the useEffect conditional problem
-  }*/
-
-  useEffect(() => {
+  /**useEffect(() => {
     function handleClickOutside(event) {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
         close();
       }
     }
 
-    document.addEventListener("click", handleClickOutside);
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, [modalRef]);
+    if (show) {
+      document.addEventListener("click", handleClickOutside);
+      return () => {
+        document.removeEventListener("click", handleClickOutside);
+      };
+    }
+  }, [show]);**/
 
-  if (!props.checkoutModalOpen) {
+  if (!show) {
     return null; // don't render the component if cart is not defined
   }
 
@@ -41,8 +38,8 @@ const YourCart = (props) => {
       className="YoCart"
       ref={modalRef}
       style={{
-        transform: props.show ? "translate(-0vh)" : "translate(100vh)",
-        opacity: props.show ? "1" : "0",
+        transform: show ? "translate(-0vh)" : "translate(100vh)",
+        opacity: show ? "1" : "0",
       }}
     >
       <h3 className="title">Your Cart</h3>

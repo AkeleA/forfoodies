@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 import "./Modal.scss";
-import avi from "../../../Assets/images/avatar.svg";
-import Dashboard from "../../../Pages/Dashboard/Dashboard";
-import YourCart from "../OrderModal/Cart";
 import { v4 as uuidv4 } from "uuid";
+import YourCart from "../OrderModal/Cart";
 
 const OrderModal = (props) => {
   const {
     show,
-    close,
-    menu,
+    closeModal,
+    selectedMenu,
     addToCart,
     openCheckOutModal,
     cart,
     removeFromCart,
   } = props;
+
   const [count, setCount] = useState(0);
+  //what is the use of checkoutModal open and selectedMenuForCheckout
   const [checkoutModalOpen, setCheckoutModalOpen] = useState(false);
-  const [selectedMenuForCheckout, setSelectedMenuForCheckout] = useState(null);
+  /**const [selectedMenuForCheckout, setSelectedMenuForCheckout] = useState(null);**/
 
   const increase = () => {
     setCount(count + 1);
@@ -29,14 +29,16 @@ const OrderModal = (props) => {
 
   const handleAddToCart = () => {
     if (count > 0) {
+      const key = uuidv4();
       const item = {
-        image: menu.image,
-        name: menu.name,
-        price: menu.price,
+        image: selectedMenu.image,
+        name: selectedMenu.name,
+        price: selectedMenu.price,
         quantity: count,
+        key,
       };
-      addToCart(item);
-      close();
+      addToCart(item, key);
+      closeModal();
       setCount(0);
     }
   };
@@ -49,19 +51,23 @@ const OrderModal = (props) => {
         opacity: show ? "1" : "0",
       }}
     >
-      {menu !== null && menu !== undefined ? (
+      {selectedMenu !== null && selectedMenu !== undefined && (
         <div className="modal-content">
-          <img src={menu.image} alt={menu.name} className="cartimg" />
-          <h3 className="carthead">{menu.name}</h3>
+          <img
+            src={selectedMenu.image}
+            alt={selectedMenu.name}
+            className="cartimg"
+          />
+          <h3 className="carthead">{selectedMenu.name}</h3>
           <p className="cartdesc">
-            Just have a single bite of this {menu.name} and it will all make a
-            proper sense to you. The kick of cherry and rich chocolate of this
-            super light, airy pastry will definitely make you feel "wow". The
-            perfect combination of cherry cream and rich chocolate can provide
-            the ultimate fulfillment to your dessert craving.
+            Just have a single bite of this {selectedMenu.name} and it will all
+            make a proper sense to you. The kick of cherry and rich chocolate of
+            this super light, airy pastry will definitely make you feel "wow".
+            The perfect combination of cherry cream and rich chocolate can
+            provide the ultimate fulfillment to your dessert craving.
           </p>
           <div className="cartdetails">
-            <p className="itemprice">{menu.price}</p>
+            <p className="itemprice">{selectedMenu.price}</p>
             <p className="deliverytime">10-20mins</p>
             <p className="itemno">10 Pcs Avail</p>
           </div>
@@ -78,19 +84,13 @@ const OrderModal = (props) => {
             <span>Add to Cart</span>
           </button>
         </div>
-      ) : (
-        <div className="modal-content">
-          <h4>No menu item selected</h4>
-        </div>
       )}
-      {menu !== null && menu !== undefined && (
-        <YourCart
-          cart={cart}
-          selectedMenuForCheckout={selectedMenuForCheckout}
-          setCheckoutModalOpen={setCheckoutModalOpen}
-          removeFromCart={removeFromCart}
-        />
-      )}
+      <YourCart
+        cart={cart}
+        /**selectedMenuForCheckout={selectedMenuForCheckout}
+        why tho?? CheckoutModalOpen={CheckoutModalOpen}**/
+        removeFromCart={removeFromCart}
+      />
     </div>
   );
 };

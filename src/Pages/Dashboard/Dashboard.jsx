@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import "./Dashboard.scss";
 import { MdHome } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
@@ -18,9 +17,17 @@ import YourCart from "../../Components/Modal/OrderModal/Cart";
 const Dashboard = () => {
   let userDetails = JSON.parse(localStorage.getItem("user"));
   //putting the images, titles and prices in arrays so i can map throught them
-  const [selectedMenu, setSelectedMenu] = useState(null);
+  const [selectedMenu, setSelectedMenu] = useState({
+    id: "",
+    name: "",
+    image: "",
+    content: "",
+    price: "",
+    function: "",
+  });
   const [modalOpen, setModalOpen] = useState(false);
   const [checkoutModalOpen, setCheckoutModalOpen] = useState(false);
+  const [yourCartModalOpen, setYourCartModalOpen] = useState(false);
   const [cart, setCart] = useState([]);
 
   const closeModal = () => {
@@ -30,21 +37,31 @@ const Dashboard = () => {
 
   const openCheckOutModal = () => {
     setModalOpen(true);
+    setYourCartModalOpen(true);
+  };
+
+  const closeYourCartModal = () => {
+    setYourCartModalOpen(false);
   };
 
   const closeCheckoutModal = () => {
     setCheckoutModalOpen(false);
   };
 
-  const addToCart = (item) => {
-    item.key = uuidv4();
-    setCart([...cart, item]);
+  const addToCart = (item, key) => {
+    const newItem = { ...item, key };
+    setCart([...cart, newItem]);
+    console.log(cart);
   };
 
   const removeFromCart = (index) => {
     const newCart = [...cart];
     newCart.splice(index, 1);
     setCart(newCart);
+  };
+
+  const ModalBackdrop = ({ show, onClick }) => {
+    return show ? <div onClick={onClick} className="fade"></div> : null;
   };
 
   const dashmenu1 = [
@@ -103,21 +120,26 @@ const Dashboard = () => {
   return (
     <div className="Dashboard">
       {modalOpen ? <div onClick={closeModal} className="fade"></div> : null}
+      <ModalBackdrop show={yourCartModalOpen} onClick={closeYourCartModal} />
       <OrderModal
         show={modalOpen}
-        close={closeModal}
-        menu={selectedMenu}
+        closeModal={closeModal}
+        selectedMenu={selectedMenu}
         addToCart={addToCart}
+        cart={cart}
         openCheckOutModal={openCheckOutModal}
+        removeFromCart={removeFromCart}
       />
-      {modalOpen && (
-        <YourCart
-          show={checkoutModalOpen}
-          close={closeModal}
-          cart={cart}
-          removeFromCart={removeFromCart}
-        />
-      )}
+      <YourCart
+        show={yourCartModalOpen}
+        /**why am I passing chechoutModal open twice?
+         * Also can I remove the useEffect while keeping the modalopen like I did for the OrderModal **/
+        close={closeYourCartModal}
+        checkoutModalOpen={checkoutModalOpen}
+        cart={cart}
+        removeFromCart={removeFromCart}
+      />
+
       <div className="sidebar">
         <div className="s-logo">
           <img src={sideLogo} alt="logo" />
