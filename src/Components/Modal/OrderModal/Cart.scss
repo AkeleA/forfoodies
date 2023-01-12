@@ -167,7 +167,82 @@ div.cat-contents {
     color: #00302e;
   }
 
+  li > .carttPrice {
+    width: 92px;
+    height: 33px;
+    margin-left: 32px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 33px;
+    /* identical to box height, or 194% */
+    color: #00302e;
+  }
+
   .cart-item {
     margin-bottom: 50px;
   }
+}
+
+div.totalcheck {
+  display: flex;
+  flex-direction: row;
+}
+
+.totalcheck > p.total {
+  width: 48px;
+  height: 33px;
+  margin-left: 430px;
+  margin-top: 90px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 33px;
+  /* identical to box height, or 194% */
+  color: rgba(0, 0, 0, 0.69);
+}
+
+div.totalcheck > span {
+  width: 128px;
+  height: 33px;
+  margin-left: 23px;
+  margin-top: 90px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 33px;
+  /* identical to box height, or 157% */
+  color: #00302e;
+}
+
+button.checkout {
+  width: 479px;
+  height: 60px;
+  margin-left: 104px;
+  margin-top: 40px;
+  background-color: #00302e;
+  border: none;
+  color: #f3c294;
+}
+
+button.checkout > span {
+  width: 74px;
+  height: 26px;
+  margin: auto;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 27px;
+  /* or 208% */
+  text-align: center;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #fbddbb;
+  color: #00302e;
 }

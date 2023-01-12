@@ -2,8 +2,20 @@ import React, { useEffect, useRef } from "react";
 import "./Cart.scss";
 
 const YourCart = (props) => {
-  const { show, close, cart, removeFromCart } = props;
+  const {
+    show,
+    closeModal,
+    cart,
+    removeFromCart,
+    openCheckOutModal,
+    openPayModal,
+  } = props;
   const modalRef = useRef(null);
+
+  const handleCheckout = () => {
+    openPayModal();
+    closeModal();
+  };
 
   /**useEffect(() => {
     function handleClickOutside(event) {
@@ -25,14 +37,6 @@ const YourCart = (props) => {
   }
 
   let totalPrice = 0;
-  if (cart) {
-    cart.forEach((item) => {
-      let price = parseFloat(item.price.replace(/[^\d\.]/g, ""));
-      if (typeof price === "number" && typeof item.quantity === "number") {
-        totalPrice += price * item.quantity;
-      }
-    });
-  }
 
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -57,6 +61,9 @@ const YourCart = (props) => {
 
       <div className="cat-contents">
         {cart.map((item, index) => {
+          let itemTotal =
+            parseFloat(item.price.replace(/[^\d\.]/g, "")) * item.quantity;
+          totalPrice += itemTotal;
           return (
             <li key={item.key} className="cart-item">
               <img src={item.image} alt={item.name} className="cartImg" />
@@ -66,10 +73,17 @@ const YourCart = (props) => {
               </p>
               <p className="cartQty">{item.quantity}</p>
               <p className="cartuPrice">{item.price}</p>
+              <p className="carttPrice">{formatter.format(itemTotal)}</p>
             </li>
           );
         })}
-        <p className="carttPrice">{formatter.format(totalPrice)}</p>
+        <div className="totalcheck">
+          <p className="total">Total: </p>
+          <span>{formatter.format(totalPrice)}</span>
+        </div>
+        <button className="checkout" onClick={handleCheckout}>
+          <span>Checkout</span>
+        </button>
       </div>
     </div>
   );

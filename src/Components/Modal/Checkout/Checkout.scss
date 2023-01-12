@@ -1,0 +1,58 @@
+div.checkout {
+  position: absolute;
+  z-index: 4;
+  width: 558px;
+  height: 150vh;
+  right: 0px;
+  top: 0px;
+  background: #ffffff;
+  form {
+    > h2.title {
+      width: 84px;
+      height: 33px;
+      margin-left: 37px;
+      margin-top: 176px;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 17px;
+      line-height: 33px;
+      /* identical to box height, or 194% */
+      color: #00302e;
+    }
+    > input {
+      width: 488px;
+      height: 71px;
+      margin-left: 37px;
+      margin-top: 33px;
+      background: rgba(255, 255, 255, 0.83);
+      border: 1px solid rgba(251, 221, 187, 0.51);
+      border-radius: 5px;
+      &.Carddate {
+        margin-top: 45px;
+      }
+      &.CVV {
+        margin-top: 47px;
+      }
+      &.CardP {
+        margin-top: 47px;
+      }
+    }
+  }
+}
+
+button.payMoney {
+  width: 488px;
+  height: 60px;
+  margin-left: 37px;
+  margin-top: 100px;
+  background: #00302e;
+  color: #f3c294;
+  border: none;
+}
+
+button.payMoney:hover {
+  cursor: pointer;
+  background-color: #fbddbb;
+  color: #00302e;
+}

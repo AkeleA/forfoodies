@@ -164,6 +164,7 @@ div.cartdetails > p.itemno {
   top: 723px;
   border: none;
   background-color: #00302e;
+  color: #fbfbfb;
 }
 
 .tocart > span {
@@ -176,5 +177,10 @@ div.cartdetails > p.itemno {
   line-height: 27px;
   /* or 208% */
   text-align: center;
-  color: #fbfbfb;
+}
+
+.tocart:hover {
+  cursor: pointer;
+  background-color: #fbddbb;
+  color: #00302e;
 }
