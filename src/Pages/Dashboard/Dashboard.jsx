@@ -15,6 +15,7 @@ import OrderModal from "../../Components/Modal/CartModal/Modal";
 import YourCart from "../../Components/Modal/OrderModal/Cart";
 import CheckoutForm from "../../Components/Modal/Checkout/Checkout";
 import { DashboardContext } from "../../Components/context";
+import OrderStatus from "../../Components/Modal/OrderStatus/OrderStatus";
 
 const Dashboard = () => {
   let userDetails = JSON.parse(localStorage.getItem("user"));
@@ -31,6 +32,7 @@ const Dashboard = () => {
   const [checkoutModalOpen, setCheckoutModalOpen] = useState(false);
   const [yourCartModalOpen, setYourCartModalOpen] = useState(false);
   const [payModalOpen, setPayModalOpen] = useState(false);
+  const [showOrderStatus, setShowOrderStatus] = useState(false);
   const [cart, setCart] = useState([]);
 
   const closeModal = () => {
@@ -39,9 +41,17 @@ const Dashboard = () => {
     setYourCartModalOpen(false);
   };
 
+  const closeOrderStat = () => {
+    setShowOrderStatus(false);
+  };
+
   const openCheckOutModal = () => {
     setModalOpen(true);
     setYourCartModalOpen(true);
+  };
+
+  const handleOrderStatusClick = () => {
+    setShowOrderStatus(!showOrderStatus);
   };
 
   const openPayModal = () => {
@@ -128,7 +138,14 @@ const Dashboard = () => {
 
   return (
     <div className="Dashboard">
-      <DashboardContext.Provider value={{ payModalOpen, setPayModalOpen }}>
+      <DashboardContext.Provider
+        value={{
+          payModalOpen,
+          setPayModalOpen,
+          showOrderStatus,
+          setShowOrderStatus,
+        }}
+      >
         {modalOpen ? <div onClick={closeModal} className="fade"></div> : null}
         <ModalBackdrop show={yourCartModalOpen} onClick={closeModal} />
         <OrderModal
@@ -156,6 +173,10 @@ const Dashboard = () => {
           <div onClick={closePayModal} className="fade"></div>
         ) : null}
         <CheckoutForm closePayModal={closePayModal} />
+        {showOrderStatus ? (
+          <div onClick={closeOrderStat} className="fade"></div>
+        ) : null}
+        <OrderStatus cart={cart} removeFromCart={removeFromCart} />
 
         <div className="sidebar">
           <div className="s-logo">
@@ -174,20 +195,18 @@ const Dashboard = () => {
                 <p className="list-prof">Your Profile</p>
               </span>
             </div>
-            <div className="s-list3">
+            <div className="s-list3" onClick={handleOrderStatusClick}>
               <span>
                 <BsCalendarFill className="icon3" />
                 <p className="list-orders">Orders</p>
                 <button className="order-button">6</button>
               </span>
             </div>
-            <div className="s-list4">
+            <div className="s-list4" onClick={openCheckOutModal}>
               <span>
                 <BsFillBookmarkFill className="icon4" />
                 <p className="list-cart">Your Cart</p>
-                <button className="cart-button" onClick={openCheckOutModal}>
-                  6
-                </button>
+                <button className="cart-button">6</button>
               </span>
             </div>
           </div>
