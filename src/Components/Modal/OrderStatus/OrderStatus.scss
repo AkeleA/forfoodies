@@ -5,6 +5,181 @@ div.orderstat {
   height: 150vh;
   right: 0px;
   top: 0px;
-
   background: #ffffff;
+}
+
+h3.title {
+  position: absolute;
+  width: 103px;
+  height: 33px;
+  left: 62px;
+  top: 52px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 33px;
+  /* identical to box height, or 194% */
+  color: #00302e;
+}
+
+h5.item {
+  position: absolute;
+  width: 50px;
+  height: 21px;
+  left: 69px;
+  top: 109px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 33px;
+  /* or 254% */
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.69);
+}
+
+h5.qty {
+  position: absolute;
+  width: 23px;
+  height: 33px;
+  left: 426px;
+  top: 109px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 33px;
+  /* identical to box height, or 254% */
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.69);
+}
+
+h5.price {
+  position: absolute;
+  width: 32px;
+  height: 33px;
+  left: 493px;
+  top: 109px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 33px;
+  /* identical to box height, or 254% */
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.69);
+}
+
+h5.stat {
+  position: absolute;
+  width: 42px;
+  height: 33px;
+  left: 608px;
+  top: 109px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 33px;
+  /* identical to box height, or 254% */
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.69);
+}
+
+div.ordercontents {
+  left: 62px;
+  top: 166px;
+  margin-left: 62px;
+  margin-top: 166px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+
+  div.order-item {
+    display: flex;
+    flex-direction: row;
+  }
+
+  div > img {
+    width: 70px;
+    height: 70px;
+  }
+
+  div > .order-name {
+    width: 113px;
+    height: 33px;
+    margin-top: 10px;
+    padding-left: 15px;
+    font-weight: 600;
+    font-family: "Poppins";
+    font-style: normal;
+    font-size: 17px;
+    line-height: 33px;
+    color: #00302e;
+  }
+
+  li > .removebutton {
+    cursor: pointer;
+    width: 50px;
+    height: 21px;
+    padding-top: 30px;
+    margin-left: -110px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 33px;
+    /* or 275% */
+    display: flex;
+    align-items: center;
+    color: #c92c33;
+  }
+
+  div > .order-amount {
+    width: 11px;
+    height: 33px;
+    margin-left: 176px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 33px;
+    /* identical to box height, or 194% */
+    color: #00302e;
+  }
+
+  div > .order-price {
+    width: 88px;
+    height: 33px;
+    margin-left: 33px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 33px;
+    /* identical to box height, or 194% */
+    color: #00302e;
+  }
+
+  div > .order-stat {
+    width: 92px;
+    height: 33px;
+    margin-left: 32px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 33px;
+    /* identical to box height, or 194% */
+    color: #00302e;
+  }
+
+  .order-item {
+    margin-bottom: 50px;
+  }
 }

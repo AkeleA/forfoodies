@@ -67,8 +67,12 @@ const Dashboard = () => {
     setCheckoutModalOpen(false);
   };
 
+  const getRandomStatus = () => {
+    return Math.random() < 0.5 ? "Delivered" : "Pending";
+  };
+
   const addToCart = (item, key) => {
-    const newItem = { ...item, key };
+    const newItem = { ...item, key, status: getRandomStatus() };
     setCart([...cart, newItem]);
     console.log(cart);
   };
