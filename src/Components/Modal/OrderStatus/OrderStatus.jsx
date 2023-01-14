@@ -3,7 +3,7 @@ import { DashboardContext } from "../../context";
 import "./OrderStatus.scss";
 
 const OrderStatus = (props) => {
-  const { cart } = props;
+  const { cart, removeFromCart } = props;
   const { showOrderStatus, setShowOrderStatus } = useContext(DashboardContext);
   console.log(props.cart);
   return (
@@ -20,12 +20,18 @@ const OrderStatus = (props) => {
       <h5 className="price">Price</h5>
       <h5 className="stat">Status</h5>
       <div className="ordercontents">
-        {cart.map((item) => (
+        {cart.map((item, index) => (
           <div key={item.id} className="order-item">
             <img src={item.image} alt={item.name} />
             <p className="order-name">{item.name}</p>
+            <p
+              className="order-rembutton"
+              onClick={() => removeFromCart(index)}
+            >
+              Remove
+            </p>
             <p className="order-amount">{item.quantity}</p>
-            <p className="order-price">N1,000</p>
+            <p className="order-price">{item.price}</p>
             <p className="order-stat">{item.status}</p>
           </div>
         ))}

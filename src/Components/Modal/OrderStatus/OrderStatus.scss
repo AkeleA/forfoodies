@@ -123,7 +123,7 @@ div.ordercontents {
     color: #00302e;
   }
 
-  li > .removebutton {
+  div > .order-rembutton {
     cursor: pointer;
     width: 50px;
     height: 21px;
@@ -140,10 +140,10 @@ div.ordercontents {
     color: #c92c33;
   }
 
-  div > .order-amount {
+  .order-amount {
     width: 11px;
     height: 33px;
-    margin-left: 176px;
+    margin-left: 239px;
     font-family: "Poppins";
     font-style: normal;
     font-weight: 700;
